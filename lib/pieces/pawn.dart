@@ -2,7 +2,7 @@ import 'package:dart_chess_pieces/board/position.dart';
 import 'chess_piece.dart';
 
 class Pawn extends ChessPiece {
-  Pawn(Position position) : super(position);
+  Pawn(super.position);
 
   @override
   List<Position> getPossiblePositions() {

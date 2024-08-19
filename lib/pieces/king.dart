@@ -2,7 +2,7 @@ import 'package:dart_chess_pieces/board/position.dart';
 import 'chess_piece.dart';
 
 class King extends ChessPiece {
-  King(Position position) : super(position);
+  King(super.position);
 
   @override
   List<Position> getPossiblePositions() {

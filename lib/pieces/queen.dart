@@ -4,7 +4,7 @@ import 'rook.dart';
 import 'bishop.dart';
 
 class Queen extends ChessPiece {
-  Queen(Position position) : super(position);
+  Queen(super.position);
 
   @override
   List<Position> getPossiblePositions() {

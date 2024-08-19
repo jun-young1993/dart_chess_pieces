@@ -2,7 +2,7 @@ import 'package:dart_chess_pieces/board/position.dart';
 import 'chess_piece.dart';
 
 class Rook extends ChessPiece {
-  Rook(Position position) : super(position);
+  Rook(super.position);
 
   @override
   List<Position> getPossiblePositions() {

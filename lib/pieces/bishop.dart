@@ -2,7 +2,7 @@ import 'package:dart_chess_pieces/board/position.dart';
 import 'chess_piece.dart';
 
 class Bishop extends ChessPiece {
-  Bishop(Position position) : super(position);
+  Bishop(super.position);
 
   @override
   List<Position> getPossiblePositions() {
