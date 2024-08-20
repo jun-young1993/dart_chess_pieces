@@ -1,4 +1,6 @@
+import 'package:flutter/material.dart';
 import 'package:dart_chess_pieces/board/position.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'chess_piece.dart';
 
 class Rook extends ChessPiece {
@@ -18,5 +20,10 @@ class Rook extends ChessPiece {
     }
 
     return positions;
+  }
+
+    @override
+  IconData getIcon() {
+    return FontAwesomeIcons.chessRook;
   }
 }
