@@ -1,6 +1,6 @@
 name: dart_chess_pieces
 description: A Dart package for creating and managing chess games, including board setup, piece movement, and game state management.
-version: 1.2.0
+version: 1.2.1
 repository: https://github.com/jun-young1993/dart_chess_pieces
 homepage: https://juny.blog
 

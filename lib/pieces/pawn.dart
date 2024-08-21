@@ -4,7 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'chess_piece.dart';
 
 class Pawn extends ChessPiece {
-  Pawn(super.position);
+  Pawn(super.position,{super.isWhite = false});
 
   @override
   List<Position> getPossiblePositions() {

@@ -25,10 +25,21 @@ class StandardChessBoard {
           // 5번째 줄(빈 줄)
           [null, null, null, null, null, null, null, null],
           // 6번째 줄(흑색 폰 배치)
-          [Pawn(Position(6, 0)), Pawn(Position(6, 1)), Pawn(Position(6, 2)), Pawn(Position(6, 3)),
-           Pawn(Position(6, 4)), Pawn(Position(6, 5)), Pawn(Position(6, 6)), Pawn(Position(6, 7))],
+          [Pawn(Position(6, 0),isWhite: true), Pawn(Position(6, 1),isWhite: true), Pawn(Position(6, 2),isWhite: true), Pawn(Position(6, 3),isWhite: true),
+           Pawn(Position(6, 4),isWhite: true), Pawn(Position(6, 5),isWhite: true), Pawn(Position(6, 6),isWhite: true), Pawn(Position(6, 7),isWhite: true)],
           // 7번째 줄(흑색 기물 배치)
-          [Rook(Position(7, 0)), Knight(Position(7, 1)), Rook(Position(7, 2)), Knight(Position(7, 3)),
-           Rook(Position(7, 4)), Knight(Position(7, 5)), Rook(Position(7, 6)), Knight(Position(7, 7))],
-        ];
+          [Rook(Position(7, 0),isWhite: true), Knight(Position(7, 1),isWhite: true), Rook(Position(7, 2),isWhite: true), Knight(Position(7, 3),isWhite: true),
+           Rook(Position(7, 4),isWhite: true), Knight(Position(7, 5),isWhite: true), Rook(Position(7, 6),isWhite: true), Knight(Position(7, 7),isWhite: true)],
+      ];
+
+  // 특정 위치(row, col)의 기물 반환
+  ChessPiece? getPiece(int rowIndex, int colIndex) {
+    if (rowIndex < 0 || rowIndex >= board.length) {
+      throw RangeError.index(rowIndex, board, 'rowIndex', 'Index out of range', board.length);
+    }
+    if (colIndex < 0 || colIndex >= board[rowIndex].length) {
+      throw RangeError.index(colIndex, board[rowIndex], 'colIndex', 'Index out of range', board[rowIndex].length);
+    }
+    return board[rowIndex][colIndex];
+  }
 }
