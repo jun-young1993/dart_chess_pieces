@@ -6,3 +6,4 @@ export 'pieces/knight.dart';
 export 'pieces/bishop.dart';
 export 'pieces/queen.dart';
 export 'pieces/king.dart';
+export 'chess_board/standard_chess_board.dart';
