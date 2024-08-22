@@ -9,5 +9,7 @@ void main() {
 
     expect(pos1 == pos2, isTrue);
     expect(pos1 == pos3, isFalse);
+    expect(pos1.isSameAs(1, 2), isTrue);
+    expect(pos1.isSameAs(2, 2), isFalse);
   });
 }

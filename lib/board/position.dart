@@ -19,4 +19,8 @@ class Position {
 
   @override
   int get hashCode => x.hashCode ^ y.hashCode;
+
+  bool isSameAs(int x, int y){
+    return this.x == x && this.y == y;
+  }
 }

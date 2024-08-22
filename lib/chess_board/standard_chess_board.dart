@@ -7,7 +7,7 @@ import 'package:dart_chess_pieces/pieces/rook.dart';
 class StandardChessBoard {
   // 8x8 체스판을 나타내는 2차원 배열
   final List<List<ChessPiece?>> board;
-
+  ChessPiece? selected;
   StandardChessBoard()
       : board = [
           // 0번째 줄(백색 기물 배치)
@@ -41,5 +41,42 @@ class StandardChessBoard {
       throw RangeError.index(colIndex, board[rowIndex], 'colIndex', 'Index out of range', board[rowIndex].length);
     }
     return board[rowIndex][colIndex];
+  }
+
+  void select(int row, int col){
+    selected = board[row][col];
+  }
+
+  void unSelect(){
+    selected = null;
+  }
+
+  void move(Position movePosition){
+    if(isSelected()){
+      
+      board[selected!.position.x][selected!.position.y]  = null;
+      board[movePosition.x][movePosition.y] = selected!.move(movePosition);
+      
+    }
+  }
+
+  bool isSelected(){
+    return selected == null ? false : true;
+  }
+
+  bool isSameAsPosition(int row, int col){
+    if(!isSelected()){
+      return false;
+    }
+    return selected!.position!.isSameAs(row, col);
+  }
+
+  bool isPossiblePosition(int row, int col){
+    
+    if(!isSelected()){
+      return false;
+    }
+
+    return selected!.isPossiblePosition(row, col);
   }
 }

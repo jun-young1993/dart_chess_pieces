@@ -9,8 +9,8 @@ class Pawn extends ChessPiece {
   @override
   List<Position> getPossiblePositions() {
     return [
-      Position(position.x, position.y + 1),
-      if (position.y == 2) Position(position.x, position.y + 2),
+      Position(position.x + (isWhite ? -1 : 1), position.y),
+      if (position.x == 1 || position.x == 6) Position(position.x + (isWhite ? -2 : 2), position.y),
     ];
   }
 

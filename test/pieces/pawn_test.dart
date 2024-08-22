@@ -9,5 +9,9 @@ void main() {
 
     expect(possiblePositions, contains(Position(1, 3)));
     expect(possiblePositions, contains(Position(1, 4)));
+
+    expect(pawn.isPossiblePosition(1, 3),isTrue);
+    expect(pawn.isPossiblePosition(1, 4),isTrue);
+    expect(pawn.isPossiblePosition(1, 5),isFalse);
   });
 }
